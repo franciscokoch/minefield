@@ -2,11 +2,42 @@
 <html lang="en">
 <head>
     <title>Campo minado</title>
+    <link rel="stylesheet" href="/canvas.css"/>
+    <link rel="preconnect" href="https://fonts.googleapis.com/" />
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Questrial&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <canvas id="game" width="511" height="511">
+    <div class="titleContainer">
+        <div>
+            <h1 class="title">Campo minado</h1>
+        </div>
+        <div>
+            <button onclick="startGame()">Começar</button>
+            <button onclick="restartGame()">Reiniciar</button>
+            <div id="timer">Tempo:</div>
+            <div id="flags">00</div>
+            <div id="game-over-message"></div>
+            <div id="game-win-message"></div>
+        </div>
+    </div>
 
-    </canvas>
+    <div class="controlsContainer">
+        <button onclick="setDifficulty(10, 10, 10)">Easy</button>
+        <button onclick="setDifficulty(16, 16, 30)">Medium</button>
+        <button onclick="setDifficulty(24, 24, 75)">Hard</button>
+    </div>
+
+    <div class="gameContainer">
+        <canvas class="minefield" id="game" width="511" height="511">
+        </canvas>
+    </div>
+
+
     <script type="text/javascript" src="./script.js"></script>
 </body>
 </html>
